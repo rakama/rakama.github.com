@@ -21,7 +21,8 @@ margin-left: -400px;
 </style>
 
 <script type="text/javascript">
-function getParameterByName(name){
+
+function getParameter(name){
   name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
   var regexS = "[\\?&]" + name + "=([^&#]*)";
   var regex = new RegExp(regexS);
@@ -31,6 +32,17 @@ function getParameterByName(name){
   else
     return decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
+function addParameter(name){
+  document.write('<param name=\'' + name + '\' value=\'' + getParameter(name) + '\'/>');
+}
+
+function addParameters(){
+  for (var i = 0; i < arguments.length; i++) {
+    addParameter(arguments[i]);
+  }
+}
+
 </script> 
 
 </head>
@@ -39,12 +51,10 @@ function getParameterByName(name){
 <div id="content">
 <object type="application/x-java-applet" name="namibrotApplet" width="800" height="600">
     <param name="code" value="com.github.rakama.nami.NamiApplet" />
-    <param name="archive" value="Namibrot-v0.0.01.jar" />
+    <param name="archive" value="Namibrot-v0.0.02.jar" />
 
-<script type="text/javascript">
-document.write('<param name=\'r\' value=\'' + getParameterByName('r') + '\'/>');
-document.write('<param name=\'i\' value=\'' + getParameterByName('i') + '\'/>');
-document.write('<param name=\'z\' value=\'' + getParameterByName('z') + '\'/>');
+<script type="text/javascript"> 
+addParameters('r', 'i', 'z', 't');
 </script> 
 
 </object>
