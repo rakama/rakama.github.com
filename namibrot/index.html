@@ -3,6 +3,7 @@
 <head>
 
 <title>Namibrot</title>
+
 <style type="text/css">
 body {
 background-color:#000;
@@ -19,21 +20,41 @@ margin-left: -400px;
 }
 </style>
 
+<script type="text/javascript">
+function getParameterByName(name){
+  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(window.location.search);
+  if(results == null)
+    return "";
+  else
+    return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+</script> 
+
 </head>
 <body>
 
 <div id="content">
-<applet archive="Namibrot.jar" code="com.github.rakama.nami.NamiApplet.class" width=800 height=600>
-Your browser does not support the <code>applet</code> tag, so here's a screenshot of what you would have seen:
-<p>
-<img src="http://i.imgur.com/sHH2z.jpg"/>
-<p>
+<object type="application/x-java-applet" name="namibrotApplet" width="800" height="600">
+    <param name="code" value="com.github.rakama.nami.NamiApplet" />
+    <param name="archive" value="Namibrot.jar" />
+
+<script type="text/javascript">
+document.write('<param name=\'r\' value=\'' + getParameterByName('r') + '\'/>');
+document.write('<param name=\'i\' value=\'' + getParameterByName('i') + '\'/>');
+document.write('<param name=\'z\' value=\'' + getParameterByName('z') + '\'/>');
+</script> 
+
+Your browser was unable to load the applet, so here's a screenshot of what you would have seen:
+<p> <img src="http://i.imgur.com/sHH2z.jpg"/> <p>
 You can download the .jar file <a href="Namibrot.jar">here</a> to try it outside the browser.
-</applet>
+</object>
 </div>
 
 <a href="http://www.digits.com" target="_blank">
-<img src="http://counter.digits.com/?counter={7dd7af55-8da7-a7f4-4d77-9d17f489026e}&template=simple" 
+<img src="http://counter.digits.com/?counter={7dd7af55-8da7-a7f4-4d77-9d17f489026e}" 
 alt="Hit Counter by Digits" border="0"  />
 </a>
 
