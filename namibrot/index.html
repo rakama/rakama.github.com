@@ -21,7 +21,8 @@ margin-left: -400px;
 </style>
 
 <script type="text/javascript">
-function getParam(name){
+
+function getParameter(name){
   name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
   var regexS = "[\\?&]" + name + "=([^&#]*)";
   var regex = new RegExp(regexS);
@@ -31,21 +32,32 @@ function getParam(name){
   else
     return decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
+function addParameter(name){
+  document.write('<param name=\'' + name + '\' value=\'' + getParameter(name) + '\'/>');
+}
+
+function addParameters(){
+  for (var i = 0; i < arguments.length; i++) {
+    addParameter(arguments[i]);
+  }
+}
+
 </script> 
 
 </head>
 <body>
 
 <div id="content">
-<script src="http://www.java.com/js/deployJava.js"></script>
-<script>
-  var attributes = { code:'com.github.rakama.nami.NamiApplet.class', archive:'Namibrot-v0.0.11.jar',  width:800, height:600};
-  var parameters = {jnlp_href: 'namibrot-v0.0.11.jnlp', url: document.URL, r: getParam('r'), i: getParam('i'), z: getParam('z')};
-  deployJava.runApplet(attributes, parameters, '1.6');
-</script>
-<noscript>
-A browser with JavaScript enabled is required for this page to operate properly.
-</noscript>
+<object type="application/x-java-applet" name="namibrotApplet" width="800" height="600">
+    <param name="code" value="com.github.rakama.nami.NamiApplet" />
+    <param name="archive" value="Namibrot-v0.0.02.jar" />
+
+<script type="text/javascript"> 
+addParameters('r', 'i', 'z', 't');
+</script> 
+
+</object>
 </div>
 
 <a href="http://www.digits.com" target="_blank">
