@@ -6,13 +6,14 @@
 <meta http-equiv="Pragma" content="no-cache">
 
 <script type="text/javascript">
-function getParam(name){
+function getParam(name){return getParamIfExists(name, "");}
+function getParamIfExists(name, def){
   name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
   var regexS = "[\\?&]" + name + "=([^&#]*)";
   var regex = new RegExp(regexS);
   var results = regex.exec(window.location.search);
   if(results == null)
-    return "";
+    return def;
   else
     return decodeURIComponent(results[1].replace(/\+/g, " "));
 }
@@ -20,23 +21,12 @@ function getParam(name){
 
 <script src="http://www.java.com/js/deployJava.js"></script>
 
-<style type="text/css">
-body {
-background-color:#000;
-color:#FFF;
-}
-</style>
-
 </head>
-<body>
+<body style="background-color:#000; color:#FFF;">
 
 <script>
-  w = getParam('w'); 
-  h = getParam('h');
-  if(w == "") 
-    w = 800;
-  if(h == "") 
-    h = 600;
+  w = getParamIfExists('w', 800); 
+  h = getParamIfExists('h', 600);
   document.write("<div style='position: absolute; top: 50%; left: 50%;");
   document.write("width:" + w + "px; height:" + h + "px;");
   document.write("margin-left: -" + (w / 2) + "px; margin-top: -" + (h/2) + "px;'>");
@@ -52,10 +42,12 @@ color:#FFF;
 A browser with JavaScript enabled is required for this page to operate properly.
 </noscript>
 
+<div style="position: absolute; bottom: 0px; right: 5px;">
 <a href="http://www.digits.com" target="_blank">
 <img src="http://counter.digits.com/?counter={7dd7af55-8da7-a7f4-4d77-9d17f489026e}" 
 alt="Hit Counter by Digits" border="0"  />
 </a>
+</div>
 
 </body>
 </html> 
