@@ -5,22 +5,6 @@
 <title>Namibrot</title>
 <meta http-equiv="Pragma" content="no-cache">
 
-<style type="text/css">
-body {
-background-color:#000;
-color:#FFF;
-}
-#content {
-position: absolute;
-top: 50%;
-left: 50%;
-width: 800px;
-height: 600px; 
-margin-top: -300px;
-margin-left: -400px;
-}
-</style>
-
 <script type="text/javascript">
 function getParam(name){
   name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -34,22 +18,39 @@ function getParam(name){
 }
 </script> 
 
+<script src="http://www.java.com/js/deployJava.js"></script>
+
+<style type="text/css">
+body {
+background-color:#000;
+color:#FFF;
+}
+</style>
+
 </head>
 <body>
 
-<div id="content">
-<script src="http://www.java.com/js/deployJava.js"></script>
 <script>
-  var attributes = {code:'com.github.rakama.nami.NamiApplet.class', archive:'namibrot-v0.0.22.jar',  width:800, height:600};
+  w = getParam('w'); 
+  h = getParam('h');
+  if(w == "") 
+    w = 800;
+  if(h == "") 
+    h = 600;
+  document.write("<div style='position: absolute; top: 50%; left: 50%;");
+  document.write("width:" + w + "px; height:" + h + "px;");
+  document.write("margin-left: -" + (w / 2) + "px; margin-top: -" + (h/2) + "px;'>");
+  var attributes = {code:'com.github.rakama.nami.NamiApplet.class', archive:'namibrot-v0.0.22.jar', width: w, height: h};
   var parameters = {jnlp_href: 'namibrot-v0.0.22.jnlp', url: document.URL, 
 	r: getParam('r'), i: getParam('i'), z: getParam('z'), t: getParam('t'),
 	rj: getParam('rj'), ij: getParam('ij')};
   deployJava.runApplet(attributes, parameters, '1.6');
+  document.write("</div>");
 </script>
+
 <noscript>
 A browser with JavaScript enabled is required for this page to operate properly.
 </noscript>
-</div>
 
 <a href="http://www.digits.com" target="_blank">
 <img src="http://counter.digits.com/?counter={7dd7af55-8da7-a7f4-4d77-9d17f489026e}" 
