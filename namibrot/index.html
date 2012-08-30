@@ -25,13 +25,14 @@ function getParamIfExists(name, def){
 <body style="background-color:#000; color:#FFF;">
 
 <script>
+  rev = '0.0.23';
   w = getParamIfExists('w', 800); 
   h = getParamIfExists('h', 600);
   document.write("<div style='position: absolute; top: 50%; left: 50%;");
   document.write("width:" + w + "px; height:" + h + "px;");
-  document.write("margin-left: -" + (w / 2) + "px; margin-top: -" + (h/2) + "px;'>");
-  var attributes = {code:'com.github.rakama.nami.NamiApplet.class', archive:'namibrot-v0.0.22.jar', width: w, height: h};
-  var parameters = {jnlp_href: 'namibrot-v0.0.22.jnlp', url: document.URL, 
+  document.write("margin-left: -" + (w/2) + "px; margin-top: -" + (h/2) + "px;'>");
+  var attributes = {code:'com.github.rakama.nami.NamiApplet.class', archive:'namibrot-v' + rev + '.jar', width: w, height: h};
+  var parameters = {jnlp_href: 'namibrot-v' + rev + '.jnlp', url: document.URL, 
 	r: getParam('r'), i: getParam('i'), z: getParam('z'), t: getParam('t'),
 	rj: getParam('rj'), ij: getParam('ij')};
   deployJava.runApplet(attributes, parameters, '1.6');
