@@ -4,7 +4,7 @@
  
 <link rel="icon" type="image/png" href="namibrot.png">
 <title>Namibrot</title>
-<meta http-equiv="Pragma" content="no-cache">
+<meta name="description" content="Animated fractal explorer for Mandelbrot and Julia sets.">
 
 <script type="text/javascript">
 function getParam(name){return getParamIfExists(name, "");}
@@ -12,7 +12,7 @@ function getParamIfExists(name, def){
   name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
   var regexS = "[\\?&]" + name + "=([^&#]*)";
   var regex = new RegExp(regexS);
-  var results = regex.exec(window.location.search);
+  var results = regex.exec(document.URL);
   if(results == null)
     return def;
   else
