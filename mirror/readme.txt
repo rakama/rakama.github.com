@@ -12,7 +12,7 @@ included in this download are,
 
 - Azeroth-v0.1-beta.7z
 - Kalimdor-v0.1-beta.7z
-- Plugins-v0.1-beta.7z
+- plugins.7z
 
 You are free to use these files as you wish, but I am not responsible for
 any damages resulting from their use. You do not need to ask my permission 
@@ -39,14 +39,14 @@ will need the following items:
 - The latest version of CraftBukkit (http://dl.bukkit.org/)
 - Multiverse-Core plugin (http://dev.bukkit.org/server-mods/multiverse-core/)
 
-Two additional plugins are included in "Plugins-v0.1-beta.rar":
+Two additional plugins are included in "plugins.7z":
 
 - CA-Teleport, teleports players across altitude boundaries
 - CA-Static, stops blocks from updating (e.g. water, grass growth, etc.)
 
 All three plugins should be extracted to the /plugins folder in your Bukkit
-directory. The "Plugins-v0.1-beta.rar" archive also includes configuration 
-files for Multiverse, which should be extracted along with the plugins.
+directory. The "plugins.7z" archive also includes configuration files for 
+Multiverse, which should be extracted along with the plugins.
 
 Once your server is running, new players should appear in Kalimdor near the 
 Southfury river. You can use Multiverse commands to swap between continents, 
