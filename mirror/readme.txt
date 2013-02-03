@@ -10,9 +10,9 @@ This version includes the maps of Eastern Kingdoms and Kalimdor, excluding
 zones that were added in the Burning Crusade expansion pack. The files 
 included in this download are,
 
-- Azeroth-v0.1-beta.rar
-- Kalimdor-v0.1-beta.rar
-- Plugins-v0.1-beta.rar
+- Azeroth-v0.1-beta.7z
+- Kalimdor-v0.1-beta.7z
+- Plugins-v0.1-beta.7z
 
 You are free to use these files as you wish, but I am not responsible for
 any damages resulting from their use. You do not need to ask my permission 
