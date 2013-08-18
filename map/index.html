@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script>
+
+    function getPos(e){
+        document.getElementById("readout").innerHTML = "<b>Coordinates:</b> x: " + getX(e) + " z: " + getZ(e);
+    }
+
+    function getCmd(e){
+        document.getElementById("command").innerHTML = "<b>Telept. Cmd:</b> /tp " + getX(e) + " 128 " + getZ(e);
+    }
+
+    function getX(e){    
+        x = e.clientX - document.getElementById("map").offsetLeft;
+        return (x - 576) * 32;
+    }
+
+    function getZ(e){    
+        z = e.clientY - document.getElementById("map").offsetTop;
+        return (z - 224) * 32;
+    }
+
+    function stopTracking(){
+        document.getElementById("readout").innerHTML="";
+    }
+
+    </script>
+</head>
+<body>
+    <div onmousedown="getCmd(event)" onmousemove="getPos(event)" onmouseout="stopTracking()"><img id="map" src="azeroth.png"></div>
+    <p id="command"><b>Telept. Cmd:</b> (click on map)</p>
+    <p id="readout"><b>Coordinates:</b> ---</p>
+</body>
+</html>
