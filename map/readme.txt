@@ -141,14 +141,14 @@ adds 51200 to the z-coordinate, so the matching coordinate for Valgarde at
 one altitude level higher is (0, 51200) and the matching coordinate for one 
 altitude level lower is (0, -51200). Each altitude layer will appear to shift 
 the world up or down by 192 blocks in the y-direction, with 64 blocks of
-overlap at the top  and bottom of the map.
+overlap at the top and bottom of the map.
 
 Outland is positioned west of Azeroth, -51200 blocks in the x-direction. The 
 sea-level data for Outland is placed inside the region from (-76800, -25600) 
 to (-25601, 25599) and centered at (-51200, 0). There are a total of four 
 altitude layers for Outland; one below sea-level, one at sea-level, and two 
 above. Altitude layers for Outland are also handled by adding or subtracting 
-102400 from the z-coordinate.
+51200 from the z-coordinate.
 
 The sections east of Azeroth, at x-coordinates >= 25600, are designated for 
 instances and battlegrounds. The only instance in v1.0 is the rotated 
