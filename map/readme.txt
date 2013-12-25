@@ -4,7 +4,7 @@ Crafting Azeroth - v1.0 - December 24th, 2013
 
 The Crafting Azeroth project is a full-scale reproduction of the World of 
 Warcraft environment inside Minecraft. This is an unofficial fan project and 
-is not in any way affiliated with Blizzard entertainment.
+is not in any way affiliated with Blizzard Entertainment.
 
 Version 1.0 includes map data for all non-instanced outdoor zones up to and 
 including the Cataclysm expansion pack. These areas include the continents of 
