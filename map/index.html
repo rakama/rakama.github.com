@@ -13,12 +13,12 @@
     }
 
     function getX(e){    
-        x = e.clientX - document.getElementById("map").offsetLeft;
+        x = e.clientX - document.getElementById("map").offsetLeft + document.body.scrollLeft + document.documentElement.scrollLeft;
         return (x - 576) * 32;
     }
 
     function getZ(e){    
-        z = e.clientY - document.getElementById("map").offsetTop;
+        z = e.clientY - document.getElementById("map").offsetTop + document.body.scrollTop + document.documentElement.scrollTop;
         return (z - 224) * 32;
     }
 
@@ -28,7 +28,7 @@
 
     </script>
 </head>
-<body style="background-color: rgb(45, 45, 180); color: rgb(255, 255, 255);">
+<body id="asfd" style="background-color: rgb(45, 45, 180); color: rgb(255, 255, 255);">
     <div onmousedown="getCmd(event)" onmousemove="getPos(event)" onmouseout="stopTracking()"><img id="map" src="azeroth.png"></div>
     <p id="command"><b>Telept. Cmd:</b> (click on map)</p>
     <p id="readout"><b>Coordinates:</b> ---</p>
