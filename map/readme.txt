@@ -20,10 +20,10 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
 IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 
 ==============================================================================
-CONTENTS
+Overview
 ==============================================================================
 
-The two zipped-archive files included in this download are,
+There are two 7zip archive files included in this download:
 
 - CraftingAzeroth-v1.0-Map.7z
 - CA-v1.0-ServerSetup.7z
